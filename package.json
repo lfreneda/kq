@@ -1,0 +1,46 @@
+{
+  "name": "kq",
+  "version": "1.0.0",
+  "description": "KQ is a Node.js 'n postgreSQL utility which generates sql using json functions to map relational data to json",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "npm test",
+    "autotest": "./node_modules/.bin/supervisor -q -n exit -x npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfreneda/kq.git"
+  },
+  "keywords": [
+    "sql",
+    "postgres",
+    "orm",
+    "json",
+    "postgres",
+    "search"
+  ],
+  "author": "Luiz Freneda <lfreneda@gmail.com> (http://www.freneda.com.br/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lfreneda/kq/issues"
+  },
+  "homepage": "https://github.com/lfreneda/kq#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-cached": "^1.1.0",
+    "gulp-coffee": "^2.3.2",
+    "gulp-env": "^0.4.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "mocha": "^3.0.2",
+    "sinon": "^1.17.5",
+    "supervisor": "^0.11.0"
+  },
+  "dependencies": {
+    "lodash": "^4.15.0",
+    "search-query-parser": "0.0.4",
+    "util": "^0.10.3"
+  }
+}
