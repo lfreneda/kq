@@ -4,7 +4,7 @@
   "description": "KQ is a Node.js 'n postgreSQL utility which generates sql using json functions to map relational data to json",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "mocha",
     "autotest": "./node_modules/.bin/supervisor -q -n exit -x npm test"
   },
   "repository": {

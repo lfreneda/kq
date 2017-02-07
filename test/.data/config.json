@@ -1,0 +1,146 @@
+{
+  "orders": {
+    "table": "orders",
+    "columns": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "description"
+      }
+    ],
+
+    "relationships": {
+
+      "service": {
+        "config": "services",
+        "whereSql": "where services.id = orders.service_id",
+        "type": "single"
+      },
+
+      "tasks": {
+        "config": "tasks",
+        "whereSql": "where tasks.order_id = orders.id",
+        "type": "list"
+      }
+
+    }
+  },
+
+  "tasks": {
+
+    "table": "tasks",
+    "columns": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "created_at",
+        "alias": "createdAt"
+      }
+    ],
+
+    "relationships": {
+
+      "employee": {
+        "config": "employees",
+        "whereSql": "where tasks.employee_id = employees.id",
+        "type": "single"
+      }
+
+    }
+  },
+
+  "services": {
+    "table": "services",
+    "columns": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "description"
+      }
+    ],
+
+    "relationships": {
+
+      "form": {
+        "config": "forms",
+        "whereSql": "where services_forms.id = services.form_id",
+        "type": "single"
+      }
+
+    }
+  },
+
+  "forms": {
+    "table": "services_forms",
+    "columns": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      }
+    ],
+
+    "relationships": {
+
+      "questions": {
+        "config": "questions",
+        "whereSql": "where services_forms.id = services_forms_questions.form_id",
+        "type": "list"
+      }
+
+    }
+  },
+
+  "questions": {
+
+    "table": "services_forms_questions",
+    "columns": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "title"
+      }
+    ],
+
+    "relationships": {
+
+      "options": {
+        "config": "options",
+        "whereSql": "where services_forms_questions.id = services_forms_questions_options.question_id",
+        "type": "list"
+      }
+
+    }
+
+  },
+
+  "options": {
+    "table": "services_forms_questions_options",
+    "columns": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "value"
+      }
+    ]
+  },
+
+  "employees": {
+    "table": "employees",
+    "columns": [
+      {
+        "name": "id"
+      },
+      {
+        "name": "name"
+      }
+    ]
+  }
+
+}
